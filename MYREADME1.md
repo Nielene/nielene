@@ -375,10 +375,101 @@ You can initialize this repository with code from a Subversion, Mercurial, or TF
 
 
 
+----------------
+https://console.firebase.google.com/u/4/project/nieleneevthomas/overview
+
+
+#1. Register app
+App nickname
+    nieleneethomas
+
+Also set up Firebase Hosting for this app. Learn more
+Hosting can also be set up later. It's free to get started anytime.
+    nieleneevthomas
+
+#2. Add Firebase SDK
+Copy and paste these scripts into the bottom of your <body> tag, but before you use any Firebase services:
+
+```html
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="/__/firebase/7.22.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="/__/firebase/7.22.1/firebase-analytics.js"></script>
+
+<!-- Initialize Firebase -->
+<script src="/__/firebase/init.js"></script>
+
+```
 
 
 
+#3. Install Firebase CLI
 
+To host your site with Firebase Hosting, you need the Firebase CLI (a command line tool).
+
+Run the following npm command to install the CLI or update to the latest CLI version.
+
+
+***- npm install -g firebase-tools -***
+
+Doesn't work? Take a look at the Firebase CLI reference or change your npm permissions
+
+#4. Deploy to Firebase Hosting
+You can deploy now or later. To deploy now, open a terminal window, then navigate to or create a root directory for your web app.
+Sign in to Google
+
+***- firebase login -***
+
+Initiate your project
+Run this command from your app’s root directory:
+
+
+***- firebase init -***
+
+Specify your site in firebase.json
+Add your site name to the firebase.json configuration file. After you get set up, see the best practices for multi-site deployment.
+
+***-
+{
+  "hosting": {
+    "site": "nieleneevthomas",
+    "public": "public",
+    ...
+  }
+}
+-***
+
+When you’re ready, deploy your web app
+Put your static files (e.g., HTML, CSS, JS) in your app’s deploy directory (the default is “public”). Then, run this command from your app’s root directory:
+
+
+***- firebase deploy --only hosting:nieleneevthomas -***
+
+After deploying, view your app at nieleneevthomas.web.app
+Need help? Check out the Hosting docs
+
+
+----------
+
+https://medium.com/swlh/how-to-deploy-a-react-app-with-firebase-hosting-98063c5bf425
+
+  817  npm cache verify
+  818  npm install firebase-tools -g
+  819  firebase login
+  820  npm run build
+  821  firebase init
+          ? Which Firebase CLI features do you want to set up for this folder? Press Space to select features, then Enter to confirm your choices. (Press <space> to select, <a> to toggle all, <i> to invert selection)
+          --> ***Hosting: Configure and deploy Firebase Hosting sites***
+          ? What do you want to use as your public directory? ***build***
+          ? Configure as a single-page app (rewrite all urls to /index.html)? ***Yes***
+          ? Set up automatic builds and deploys with GitHub? ***No***
+          ? File build/index.html already exists. Overwrite? ***No***
+          i  Skipping write of build/index.html
+  822  firebase deploy
+
+the tutorial suggests not to overwrite the index.html
 
 
 
